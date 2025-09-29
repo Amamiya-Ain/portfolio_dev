@@ -1,19 +1,24 @@
 import { projects } from "@/data/projects";
 import Link from "next/link";
 
-// ✅ generateStaticParams はこの形でOK
-export async function generateStaticParams() {
+export function generateStaticParams() {
   return projects.map((p) => ({ slug: p.slug }));
 }
 
-// ✅ props を { params }: { params: { slug: string } } と直接書く
 export default function ProjectDetail({
   params,
 }: {
   params: { slug: string };
 }) {
   const p = projects.find((x) => x.slug === params.slug);
-  if (!p) return <div style={{ padding: 24 }}>Not Found</div>;
+  if (!p) {
+    return (
+      <main style={{ maxWidth: 800, margin: "0 auto", padding: 24 }}>
+        <Link href="/">← Back</Link>
+        <h1>Not Found</h1>
+      </main>
+    );
+  }
 
   return (
     <main style={{ maxWidth: 800, margin: "0 auto", padding: 24, display: "grid", gap: 16 }}>
