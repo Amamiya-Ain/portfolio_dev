@@ -1,12 +1,17 @@
 import { projects } from "@/data/projects";
 import Link from "next/link";
 
-export function generateStaticParams() {
+// ✅ generateStaticParams はこの形でOK
+export async function generateStaticParams() {
   return projects.map((p) => ({ slug: p.slug }));
 }
 
-// Next.js の App Router はこの型でOK
-export default function ProjectDetail({ params }: { params: { slug: string } }) {
+// ✅ props を { params }: { params: { slug: string } } と直接書く
+export default function ProjectDetail({
+  params,
+}: {
+  params: { slug: string };
+}) {
   const p = projects.find((x) => x.slug === params.slug);
   if (!p) return <div style={{ padding: 24 }}>Not Found</div>;
 
