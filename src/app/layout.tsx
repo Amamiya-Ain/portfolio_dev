@@ -1,11 +1,14 @@
 // src/app/layout.tsx
-import type { ReactNode } from "react";
-import "./globals.css"; // あれば
+import { PlasmicRootProvider } from '@plasmicapp/react-web';
 
-export default function RootLayout({ children }: { children: ReactNode }) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="ja">
-      <body>{children}</body>
+      <body>
+        <PlasmicRootProvider>
+          {children}
+        </PlasmicRootProvider>
+      </body>
     </html>
   );
 }

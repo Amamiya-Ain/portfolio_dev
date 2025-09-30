@@ -1,7 +1,8 @@
-// src/app/page.tsx
+// src/app/about/page.tsx
+
 'use client';
 import Link from 'next/link';
-import PlasmicHomepage from '@/components/plasmic/portfolio_dev/PlasmicHomepage';
+import PlasmicHomepage5 from "../../../components/plasmic/portfolio_dev/PlasmicHomepage5";
 
 export default function Page() {
   return (
@@ -13,7 +14,7 @@ export default function Page() {
         <Link href="/Achievements">Achievements</Link> {' | '}
         <Link href="/Blog">Blog</Link> {' | '}
       </nav>
-      <PlasmicHomepage />
+      <PlasmicHomepage5 />
       <div className="plasmic-root">
       </div>
     </>

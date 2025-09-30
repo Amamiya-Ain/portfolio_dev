@@ -1,4 +1,4 @@
+// next.config.mjs（or js）
 /** @type {import('next').NextConfig} */
-const nextConfig = { /* … */ };
-
+const nextConfig = {};
 export default nextConfig;

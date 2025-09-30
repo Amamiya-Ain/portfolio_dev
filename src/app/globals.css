@@ -24,3 +24,11 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* src/app/globals.css など */
+.plasmic-root a {
+  pointer-events: none;    /* クリックを受け取らせない */
+  cursor: default;
+  text-decoration: none;
+}
+
